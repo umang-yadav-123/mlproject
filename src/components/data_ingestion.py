@@ -8,6 +8,9 @@ from sklearn.model_selection import train_test_split
 from src.exception import customException
 from src.loggers import logging
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 
 
 @dataclass
@@ -88,6 +91,8 @@ if __name__ == "__main__":
             test_data
         )
     )
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr, test_arr))
 
     print("Data transformation completed successfully.")
     print("Preprocessor saved at:", preprocessor_path)
